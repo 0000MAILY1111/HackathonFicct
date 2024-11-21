@@ -17,6 +17,16 @@
   border-bottom-right-radius: 100%;
 }
 
+.corner-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px; /* Ajusta el tamaño de la imagen */
+  height: 80px; /* Ajusta el tamaño de la imagen */
+  object-fit: cover;
+  z-index: 20; /* Asegura que la imagen esté por encima del contenido */
+}
+
 .content {
   margin-top: 100px;
   padding: 32px 16px;
@@ -112,3 +122,30 @@
   font-size: 14px;
   color: #333333;
 }
+
+.home-container {
+  position: relative;
+}
+
+
+.green-corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 80px;
+  background-color: #0a8043;
+  border-bottom-right-radius: 100%;
+  z-index: 10; /* Detrás del contenido */
+}
+
+.content {
+  margin-top: 100px;
+  padding: 32px 16px;
+  position: relative;
+  z-index: 20; /* Encima de la esquina verde */
+}
+
+
+
+
