@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import IntroPage from "./pages/IntroPage";
 import InfoPlace from "./pages/InfoPlace";
 import Map from "./pages/Map";
+import { SwimPage } from "./pages/SwimPage";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/infoplace" element={<InfoPlace />} />
         <Route path="/map" element={<Map />} />
+        <Route path="/swim" element={<SwimPage/>} />
       </Routes>
     </BrowserRouter>
   );
