@@ -44,5 +44,4 @@ const NavIcons = () => {
     </div>
   );
 };
-
 export default NavIcons;
