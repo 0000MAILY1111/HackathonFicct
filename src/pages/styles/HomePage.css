@@ -21,9 +21,9 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 80px; /* Ajusta el tamaño de la imagen */
-  height: 80px; /* Ajusta el tamaño de la imagen */
-  object-fit: cover;
+  width: 100px;
+  height: 80px;
+  object-fit: fill;
   z-index: 20; /* Asegura que la imagen esté por encima del contenido */
 }
 

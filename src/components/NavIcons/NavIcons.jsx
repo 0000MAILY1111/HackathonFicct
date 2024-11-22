@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import tourism from "../../assets/tourism.svg";
 import tourism_unselected from "../../assets/toursim_unselected.svg";
@@ -12,16 +12,16 @@ import gym from "../../assets/GYM.svg";
 import GYMCOr from "../../assets/GYMCOr.svg";
 import health from "../../assets/Health.svg";
 import Healtcor from "../../assets/Healtcor.svg";
+import { useLocation } from "react-router-dom";
+
 
 const NavIcons = () => {
-  const [selectedButton, setSelectedButton] = useState(""); // Estado para rastrear el botón seleccionado
+  const selectedButton = useLocation().pathname.substring(1, useLocation().pathname.length);
   const navigate = useNavigate();
-
   const handleClick = (x) => {
-    setSelectedButton(x); // Actualizamos el estado con el botón seleccionado
     navigate(`/${x}`);
   };
-
+  
   return (
     <div className="icon-container" style={{ display: "flex", gap: "10px" }}>
       <img
@@ -55,7 +55,7 @@ const NavIcons = () => {
         style={{ width: "50px", cursor: "pointer" }}
       />
       <img
-        src={selectedButton === "healt_public" ? health : Healtcor}
+        src={selectedButton === "healt_public" ? Healtcor : health}
         alt="icono"
         onClick={() => handleClick("healt_public")}
         style={{ width: "50px", cursor: "pointer" }}

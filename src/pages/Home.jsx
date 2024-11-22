@@ -4,6 +4,7 @@ import search from "../assets/search.png";
 import filter from "../assets/filter.svg";
 import logoSantaCruz from "../assets/Logo SCZ GAD - Original - 2021_1 (2).png"; // Ruta de la imagen
 import NavIcons from "../components/NavIcons/NavIcons";
+import { FiltrarMenu } from "../components/FiltrarMenu";
 
 const Home = () => {
   return (
@@ -21,7 +22,7 @@ const Home = () => {
         <div className="search-options">
           <p className="map-link">Explorar en el mapa</p>
           <div className="filter-option">
-            <p>Filtrar</p>
+            <FiltrarMenu/>
             <img src={filter} alt="Filter icon" className="filter-icon" />
 
           </div>

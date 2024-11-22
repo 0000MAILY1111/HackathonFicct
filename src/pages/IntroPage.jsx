@@ -55,7 +55,7 @@ const IntroPage = () => {
     { code: "es", name: "Español", flag: "🇪🇸", img: spain },
     { code: "de", name: "Deutsch", flag: "🇩🇪", img: german },
     { code: "en", name: "English", flag: "🇺🇸", img: usa },
-    { code: "br", name: "Brazil", flag: "🇧🇷", img: brasil },
+    { code: "br", name: "portugués", flag: "🇧🇷", img: brasil },
     { code: "fr", name: "Français", flag: "🇫🇷", img: france },
   ];
 
