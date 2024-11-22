@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 
 const InfoPlace = () => {
   return <div>InfoPlace</div>;

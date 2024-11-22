@@ -1,47 +1,67 @@
-import tourism from "../../assets/tourism.svg";
-import education from "../../assets/education.svg";
-import bici from "../../assets/Bici.svg";
-import swim from "../../assets/Swin.svg";
-import gym from "../../assets/GYM.svg";
-import health from "../../assets/Health.svg";
-import tourism_unselected from "../../assets/toursim_unselected.svg";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import "./NavIcons.css"  
-
-
+import tourism from "../../assets/tourism.svg";
+import tourism_unselected from "../../assets/toursim_unselected.svg";
+import education from "../../assets/education.svg";
+import edcucor from "../../assets/edcucor.svg";
+import bici from "../../assets/Bici.svg";
+import bicicor from "../../assets/bicicor.svg";
+import swim from "../../assets/Swin.svg";
+import Swingna from "../../assets/Swingna.svg";
+import gym from "../../assets/GYM.svg";
+import GYMCOr from "../../assets/GYMCOr.svg";
+import health from "../../assets/Health.svg";
+import Healtcor from "../../assets/Healtcor.svg";
 
 const NavIcons = () => {
+  const [selectedButton, setSelectedButton] = useState(""); // Estado para rastrear el botón seleccionado
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handleClick = (x) => {
-    if (x == "swim") navigate("/swim");    
-    if (x == "home") navigate("/home");    
-    if (x == "infoplace") navigate("/infoplace");    
-    if (x == "education") navigate("/education");    
-    if (x == "gym") navigate("/gym");    
-    if (x == "healt_public") navigate("/healt_public");    
-    if (x == "tourism") navigate("/tourism");    
-    if (x == "publicservice") navigate("/publicservice");      
+    setSelectedButton(x); // Actualizamos el estado con el botón seleccionado
+    navigate(`/${x}`);
   };
 
   return (
-    <div className="icon-container">
-      
-      {(location.pathname == '/home' || location.pathname == '/tourism') ? (
-        <img src={tourism} alt="icono" className="icon" onClick={() => handleClick ('tourism')} />
-      ) : (
-        <img src={tourism_unselected} alt="icono" className="icon" onClick={() => handleClick ('tourism')} />
-      ) }
-      
-      <img src={education} alt="icono" className="icon"  onClick={() => handleClick ('education')}/>
-      <img src={bici} alt="icono" className="icon"  onClick={() => handleClick ('publicservice')}/>
-      <img src={swim} alt="icono" className="icon" onClick={() => handleClick ('swim')} />
-      <img src={gym} alt="icono" className="icon" onClick={() => handleClick ('gym')} />
-      <img src={health} alt="icono" className="icon" onClick={() => handleClick ('healt_public')} />
-        
+    <div className="icon-container" style={{ display: "flex", gap: "10px" }}>
+      <img
+        src={selectedButton === "tourism" ? tourism : tourism_unselected}
+        alt="icono"
+        onClick={() => handleClick("tourism")}
+        style={{ width: "50px", cursor: "pointer" }}
+      />
+      <img
+        src={selectedButton === "education" ? edcucor : education}
+        alt="icono"
+        onClick={() => handleClick("education")}
+        style={{ width: "50px", cursor: "pointer" }}
+      />
+      <img
+        src={selectedButton === "publicservice" ? bicicor : bici}
+        alt="icono"
+        onClick={() => handleClick("publicservice")}
+        style={{ width: "50px", cursor: "pointer" }}
+      />
+      <img
+        src={selectedButton === "swim" ? Swingna : swim}
+        alt="icono"
+        onClick={() => handleClick("swim")}
+        style={{ width: "50px", cursor: "pointer" }}
+      />
+      <img
+        src={selectedButton === "gym" ? GYMCOr : gym}
+        alt="icono"
+        onClick={() => handleClick("gym")}
+        style={{ width: "50px", cursor: "pointer" }}
+      />
+      <img
+        src={selectedButton === "healt_public" ? health : Healtcor}
+        alt="icono"
+        onClick={() => handleClick("healt_public")}
+        style={{ width: "50px", cursor: "pointer" }}
+      />
     </div>
   );
 };
+
 export default NavIcons;
